@@ -1,5 +1,5 @@
 SRC=megaphone.cpp
-fOBJ=$(SRC:.cpp=.o)
+OBJ=$(SRC:.cpp=.o)
 
 NAME=megaphone
 

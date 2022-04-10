@@ -18,11 +18,14 @@ int main(void)
 	is_run = 1;
 	while (is_run)
 	{
+		std::cout << ">";
 		std::cin >> command;
 		if (command == command_ADD)
 			phoneBook.addContact();
 		else if (command == command_EXIT)
 			is_run = 0;
+		else if (command == command_SEARCH)
+			phoneBook.search();
 	}
 	return (0);
 }

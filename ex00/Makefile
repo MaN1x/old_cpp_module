@@ -1,12 +1,25 @@
 SRC=megaphone.cpp
+fOBJ=$(SRC:.cpp=.o)
+
 NAME=megaphone
-FLAGS=-Wall -Werror -Wextra
+
+CXX=clang++
+CXXFLAGS=-Wall -Werror -Wextra
+
 all: $(NAME)
 
-$(NAME):
-	clang++  $(SRC) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CXX) $(OBJ) -o $@
+
+.o:
+	$(CXX) $(CXXFLAGS) -c $^ -o $@
 
 clean:
+	rm $(OBJ)
+
+fclean: clean
 	rm $(NAME)
 
-re: clean $(NAME)
+re: fclean all
+
+.PHONY: clean fclean all re

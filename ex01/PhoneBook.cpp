@@ -13,7 +13,7 @@ PhoneBook::PhoneBook() {
 
 void	PhoneBook::print_contact_info(int index) {
 	if (PhoneBook::contacts[index].get_first_name().empty())
-		std::cout << "??" << std::endl;
+		std::cout << "index out of range" << std::endl;
 	else
 	{
 		std::cout << "first name: " << PhoneBook::contacts[index].get_first_name() << std::endl;

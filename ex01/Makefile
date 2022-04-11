@@ -1,5 +1,6 @@
 SRC=Contact.cpp main.cpp PhoneBook.cpp
 OBJ=$(SRC:.cpp=.o)
+INCLUDES=Contact.hpp PhoneBook.hpp
 
 NAME=PhoneBook
 
@@ -11,8 +12,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CXX) $(OBJ) -o $@
 
-.o:
-	$(CXX) $(CXXFLAGS) -c $^ -o $@
+%.o: %.cpp $(INCLUDES)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm $(OBJ)

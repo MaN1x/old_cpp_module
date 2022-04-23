@@ -57,11 +57,13 @@ void	PhoneBook::print_contact_field(std::string str) {
 }
 
 void	PhoneBook::search() {
-	int index;
+	std::string	index;
+
 	print_contact_list();
 	std::cout << ">";
-	std::cin >> index;
-	print_contact_info(index);
+	while (std::getline(std::cin, index) && !(index[0] >= '0' && index[0] <= '7' && index[1] == '\0'))
+		std::cout << ">";
+	print_contact_info(index[0] - '0');
 }
 
 void	PhoneBook::addContact() {
@@ -69,27 +71,27 @@ void	PhoneBook::addContact() {
 
 	std::cout << "First Name:" << std::endl;
 	std::cout << ">";
-	std::cin >> buffer;
+	std::getline(std::cin, buffer);
 	contacts[index].set_first_name(buffer);
 
 	std::cout << "Last Name:" << std::endl;
 	std::cout << ">";
-	std::cin >> buffer;
+	std::getline(std::cin, buffer);
 	contacts[index].set_last_name(buffer);
 
 	std::cout << "Nickname:" << std::endl;
 	std::cout << ">";
-	std::cin >> buffer;
+	std::getline(std::cin, buffer);
 	contacts[index].set_nickname(buffer);
 
 	std::cout << "Phone number:" << std::endl;
 	std::cout << ">";
-	std::cin >> buffer;
+	std::getline(std::cin, buffer);
 	contacts[index].set_phone_number(buffer);
 
 	std::cout << "Darkest secret:" << std::endl;
 	std::cout << ">";
-	std::cin >> buffer;
+	std::getline(std::cin, buffer);
 	contacts[index].set_darkest_secret(buffer);
 
 	index == 7 ? index = 0 : index++;

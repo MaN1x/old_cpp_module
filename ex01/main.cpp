@@ -8,23 +8,20 @@
 
 int main(void)
 {
-	int is_run;
+	bool is_run;
 	std::string command;
-	const std::string command_ADD = "ADD";
-	const std::string command_EXIT = "EXIT";
-	const std::string command_SEARCH = "SEARCH";
 	PhoneBook phoneBook;
 
-	is_run = 1;
+	is_run = true;
 	while (is_run)
 	{
 		std::cout << ">";
-		std::cin >> command;
-		if (command == command_ADD)
+		std::getline(std::cin, command);
+		if (command == "ADD")
 			phoneBook.addContact();
-		else if (command == command_EXIT)
-			is_run = 0;
-		else if (command == command_SEARCH)
+		else if (command == "EXIT")
+			is_run = false;
+		else if (command == "SEARCH")
 			phoneBook.search();
 	}
 	return (0);

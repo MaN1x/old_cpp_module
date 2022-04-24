@@ -90,3 +90,23 @@ void Account::_displayTimestamp()
 	std::strftime(s_time, 80, "[%Y%m%d_%H%M%S] ", timeinfo);
 	std::cout << s_time;
 }
+
+int Account::getNbAccounts()
+{
+	return (_nbAccounts);
+}
+
+int Account::getTotalAmount()
+{
+	return (_totalAmount);
+}
+
+int Account::getNbDeposits()
+{
+	return (_totalNbDeposits);
+}
+
+int Account::getNbWithdrawals()
+{
+	return (_totalNbWithdrawals);
+}

@@ -5,7 +5,7 @@ INCLUDES=Account.hpp
 NAME=tests
 
 CXX=clang++
-CXXFLAGS=-Wall -Werror -Wextra
+CXXFLAGS=-Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
 

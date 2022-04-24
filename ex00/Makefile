@@ -4,7 +4,7 @@ OBJ=$(SRC:.cpp=.o)
 NAME=megaphone
 
 CXX=clang++
-CXXFLAGS=-Wall -Werror -Wextra
+CXXFLAGS=-Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
 

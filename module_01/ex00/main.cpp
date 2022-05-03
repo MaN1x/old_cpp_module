@@ -14,6 +14,6 @@
 
 int main(void)
 {
-	randomChump("test");
+	randomChump("name");
 	return (0);
 }

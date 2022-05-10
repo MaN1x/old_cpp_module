@@ -20,8 +20,11 @@ int main(void)
 	std::string *stringPTR = &str;
 	std::string &stringREF = str;
 
-	std::cout << *stringPTR << std::endl;
-	std::cout << stringREF << std::endl;
+	std::cout << "stringPTR address: " << stringPTR << std::endl;
+	std::cout << "stringREF address: " << &stringREF << std::endl;
+
+	std::cout << "stringPTR: " << *stringPTR << std::endl;
+	std::cout << "stringREF: " << stringREF << std::endl;
 
 	return (0);
 }
